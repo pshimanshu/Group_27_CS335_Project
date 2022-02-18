@@ -24,7 +24,7 @@
 %token <node> SUB_ASSIGN LEFT_ASSIGN RIGHT_ASSIGN AND_ASSIGN ;
 %token <node> XOR_ASSIGN OR_ASSIGN TYPE_NAME ;
 %token <node> PROTECTED TRY TYPENAME USING DELETE THROW PUBLIC THIS CLASS PRIVATE OPERATOR ;
-%token <node> CATCH BOOL NAMESPACE FALSE TRUE TYPEID VECTOR STRING ;
+%token <node> CATCH BOOL NAMESPACE FALSE TRUE TYPEID VECTOR STRING FRIEND;
 %token <node> TYPEDEF EXTERN STATIC AUTO REGISTER ;
 %token <node> CHAR SHORT INT LONG SIGNED UNSIGNED FLOAT DOUBLE CONST VOLATILE VOID ;
 %token <node> STRUCT UNION ENUM ELLIPSIS ;
@@ -235,6 +235,7 @@ type_specifier
 	|  TYPE_NAME	{ $$ = create_terminal("TYPE_NAME", NULL); }
 	;
 
+
 struct_or_union_specifier
 	:  struct_or_union IDENTIFIER '{' struct_declaration_list '}'	 { $1->add_children(create_terminal("IDENTIFIER",NULL), $4); $$ = $1; }
 	|  struct_or_union '{' struct_declaration_list '}'	 { $1->add_child($3); $$ = $1; }
@@ -245,6 +246,7 @@ struct_or_union
 	:  STRUCT	 { $$ = create_non_terminal("STRUCT"); }
 	|  UNION	 { $$ = create_non_terminal("UNION"); }
 	;
+
 
 struct_declaration_list
 	:  struct_declaration	 { $$ = create_non_terminal("struct_declaration", $1); }

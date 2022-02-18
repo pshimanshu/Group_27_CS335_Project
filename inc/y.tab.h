@@ -94,38 +94,39 @@ extern int yydebug;
     TYPEID = 300,
     VECTOR = 301,
     STRING = 302,
-    TYPEDEF = 303,
-    EXTERN = 304,
-    STATIC = 305,
-    AUTO = 306,
-    REGISTER = 307,
-    CHAR = 308,
-    SHORT = 309,
-    INT = 310,
-    LONG = 311,
-    SIGNED = 312,
-    UNSIGNED = 313,
-    FLOAT = 314,
-    DOUBLE = 315,
-    CONST = 316,
-    VOLATILE = 317,
-    VOID = 318,
-    STRUCT = 319,
-    UNION = 320,
-    ENUM = 321,
-    ELLIPSIS = 322,
-    CASE = 323,
-    DEFAULT = 324,
-    IF = 325,
-    ELSE = 326,
-    SWITCH = 327,
-    WHILE = 328,
-    DO = 329,
-    FOR = 330,
-    GOTO = 331,
-    CONTINUE = 332,
-    BREAK = 333,
-    RETURN = 334
+    FRIEND = 303,
+    TYPEDEF = 304,
+    EXTERN = 305,
+    STATIC = 306,
+    AUTO = 307,
+    REGISTER = 308,
+    CHAR = 309,
+    SHORT = 310,
+    INT = 311,
+    LONG = 312,
+    SIGNED = 313,
+    UNSIGNED = 314,
+    FLOAT = 315,
+    DOUBLE = 316,
+    CONST = 317,
+    VOLATILE = 318,
+    VOID = 319,
+    STRUCT = 320,
+    UNION = 321,
+    ENUM = 322,
+    ELLIPSIS = 323,
+    CASE = 324,
+    DEFAULT = 325,
+    IF = 326,
+    ELSE = 327,
+    SWITCH = 328,
+    WHILE = 329,
+    DO = 330,
+    FOR = 331,
+    GOTO = 332,
+    CONTINUE = 333,
+    BREAK = 334,
+    RETURN = 335
   };
 #endif
 /* Tokens.  */
@@ -174,38 +175,39 @@ extern int yydebug;
 #define TYPEID 300
 #define VECTOR 301
 #define STRING 302
-#define TYPEDEF 303
-#define EXTERN 304
-#define STATIC 305
-#define AUTO 306
-#define REGISTER 307
-#define CHAR 308
-#define SHORT 309
-#define INT 310
-#define LONG 311
-#define SIGNED 312
-#define UNSIGNED 313
-#define FLOAT 314
-#define DOUBLE 315
-#define CONST 316
-#define VOLATILE 317
-#define VOID 318
-#define STRUCT 319
-#define UNION 320
-#define ENUM 321
-#define ELLIPSIS 322
-#define CASE 323
-#define DEFAULT 324
-#define IF 325
-#define ELSE 326
-#define SWITCH 327
-#define WHILE 328
-#define DO 329
-#define FOR 330
-#define GOTO 331
-#define CONTINUE 332
-#define BREAK 333
-#define RETURN 334
+#define FRIEND 303
+#define TYPEDEF 304
+#define EXTERN 305
+#define STATIC 306
+#define AUTO 307
+#define REGISTER 308
+#define CHAR 309
+#define SHORT 310
+#define INT 311
+#define LONG 312
+#define SIGNED 313
+#define UNSIGNED 314
+#define FLOAT 315
+#define DOUBLE 316
+#define CONST 317
+#define VOLATILE 318
+#define VOID 319
+#define STRUCT 320
+#define UNION 321
+#define ENUM 322
+#define ELLIPSIS 323
+#define CASE 324
+#define DEFAULT 325
+#define IF 326
+#define ELSE 327
+#define SWITCH 328
+#define WHILE 329
+#define DO 330
+#define FOR 331
+#define GOTO 332
+#define CONTINUE 333
+#define BREAK 334
+#define RETURN 335
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -215,7 +217,7 @@ union YYSTYPE
 
 	class GraphNode* node;
 
-#line 219 "y.tab.h"
+#line 221 "y.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

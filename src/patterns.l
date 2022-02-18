@@ -98,6 +98,7 @@ extern TOKEN_DATA token_data;
  
 "vector"                { count(); return(VECTOR); }
 "string"                { count(); return(STRING); }
+"friend"				{ count(); return(FRIEND); }
 
 
 

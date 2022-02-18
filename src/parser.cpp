@@ -34,15 +34,15 @@ int main(int argc, char *argv[]) {
 
   	// std::ofstream outfile(argv[3]);
   	dot_file.open(argv[3]); // = outfile;
-
+	std::cout << "opening dot file\n";
 	std::stringstream ss;
 	ss << "digraph G {\n";
 	ss << "\tordering=out\n";
 	dot_file << ss.str();
 
 	root = create_non_terminal("translation_unit");
-	root->dotify();
 	int abc = yyparse();
+	root->dotify();
 	
 	
 	std::cout << "abc: " <<  abc << std::endl;
@@ -53,6 +53,7 @@ int main(int argc, char *argv[]) {
 	dot_file << ss.str();
 
 	dot_file.close();
+	std::cout << "dot-file closed\n";
 
   return 0;
 }

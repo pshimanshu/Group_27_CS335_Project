@@ -342,7 +342,7 @@ int main(int argc, char **argv){
     //     free(token_data.lexeme)
     // }
     int val;
-   	while ( (val = yylex()) != -1 ) {
+   	while ( (val = yylex()) > 0 ) {
         char token_str[64];
         token_to_string(val, token_str);
 		cout << setw(15) <<  token_str << setw(12)  << token_data.lexeme << setw(8) <<  token_data.line_num <<  setw(8) <<  token_data.column_num << "\n";
