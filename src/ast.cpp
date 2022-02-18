@@ -23,16 +23,19 @@ unsigned long long int GraphNode::get_id() {
 Terminal::Terminal(const char* name_, const char* value_) {
 	name = std::string(name_);
 	if (value_) value = std::string(value_);
+	std::cout << id << " " << name  << "\n";
 }
 
 Terminal::Terminal(const char* name_, const char* value_, unsigned int _line_num, unsigned int _column ) : GraphNode(_line_num, _column){
 	name = std::string(name_);
 	if (value_) value = std::string(value_);
+	std::cout << id << " " << name  << "\n";
 }
 
 
 Non_Terminal::Non_Terminal(const char* name_) {
 	name = std::string(name_);
+	std::cout << id << " " << name  << "\n";
 }
 
 /* These should never be called in objects of type GraphNode or Terminal */

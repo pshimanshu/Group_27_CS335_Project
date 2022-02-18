@@ -34,7 +34,6 @@ int main(int argc, char *argv[]) {
 
   	// std::ofstream outfile(argv[3]);
   	dot_file.open(argv[3]); // = outfile;
-	std::cout << "dot-file opening\n";
 
 	std::stringstream ss;
 	ss << "digraph G {\n";
@@ -42,7 +41,6 @@ int main(int argc, char *argv[]) {
 	dot_file << ss.str();
 
 	root = create_non_terminal("translation_unit");
-	std::cout << "start parsing\n";
 	root->dotify();
 	int abc = yyparse();
 	
