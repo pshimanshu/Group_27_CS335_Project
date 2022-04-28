@@ -1,7 +1,16 @@
-// should be ignored
 
-int main (){
-    int x[3] = {4,5,6};
-    /* hi im joking */
+
+int main(){
+    /*distance between points*/
+
+    //point a
+    struct point a;
+    int long long c;
+    char* a= "hi";
+
+    // point b
+    struct point b;
+    printf("%d\n", b.x - a.x + 2*3/3);
+
     return 0;
 }

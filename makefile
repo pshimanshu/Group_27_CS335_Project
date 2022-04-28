@@ -30,25 +30,33 @@ INCFLAGS = $(addprefix -I, $(INCDIR))
 
 
 parser: grammar patterns
-	$(CXX) $(CXXSTOPFLAGS) $(CXXFLAGS) $(INCFLAGS) $(SRCDIR)/ast.cpp -o ast.o
+	
 	$(CXX) $(CXXSTOPFLAGS) $(CXXEXTRAFLAGS) $(LDFLAGS) $(INCFLAGS) $(BUILDDIR)/lex.yy.c -o lex.yy.o
 	$(CXX) $(CXXSTOPFLAGS) $(CXXEXTRAFLAGS) $(LDFLAGS) $(INCFLAGS) $(BUILDDIR)/y.tab.c -o y.tab.o
 	$(CXX) $(CXXSTOPFLAGS) $(CXXFLAGS) $(INCFLAGS) $(SRCDIR)/parser.cpp -o parser.o
-	$(CXX) -o parser lex.yy.o y.tab.o ast.o parser.o
+	$(CXX) -o parser lex.yy.o y.tab.o parser.o
 	@mkdir -p $(TARGETDIR)
 	@mv parser $(TARGETDIR)/.
-	@mv y.dot $(BUILDDIR)/.
+	
 	@mv y.output $(BUILDDIR)/.
-	rm ast.o lex.yy.o y.tab.o parser.o
+	rm lex.yy.o y.tab.o parser.o
 
 grammar:
 	$(YACC) $(YFLAGS) --graph $(GRAMMAR)
 	@mkdir -p $(BUILDDIR)
 	@mv y.tab.c $(BUILDDIR)/.
-	@mv y.tab.h $(INCDIR)/.
+	@mv y.tab.h $(INCDIR)/.	
+	sfdp -x -Tpdf y.dot -o LRA.pdf
+	@mv y.dot $(BUILDDIR)/.
+	@mkdir -p $(TARGETDIR)
+	@mv LRA.pdf $(TARGETDIR)/.
+	
+	
 
 
-lexer:
+
+
+lexer: patterns
 	$(CXX) $(CXXSTOPFLAGS) $(CXXFLAGS) $(INCFLAGS) $(SRCDIR)/lexer.cpp -o lexer.o
 	$(CXX) $(CXXSTOPFLAGS) $(CXXEXTRAFLAGS) $(LDFLAGS) $(INCFLAGS) $(BUILDDIR)/lex.yy.c -o lex.yy.o
 	$(CXX) -o lexer lexer.o lex.yy.o

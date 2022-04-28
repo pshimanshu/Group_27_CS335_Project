@@ -11,8 +11,6 @@ using namespace std;
 
 #include "scanner.h"
 #include "y.tab.h"
-// #include "AST.h"
-// #include "parser.hpp"
 
 
 extern "C" int yylex();

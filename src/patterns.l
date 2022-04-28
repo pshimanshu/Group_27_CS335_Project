@@ -18,8 +18,6 @@ using namespace std;
 
 #include "scanner.h"
 #include "y.tab.h"
-#include "ast.h"
-// #include "parser.hpp"
 
 void count();
 int check_type();
@@ -176,9 +174,8 @@ L?\"(\\.|[^\\"])*\"		{ count(); return(STRING_LITERAL); }
 
 %%
 
-int yywrap()
-{	exit(0);
-	return(1);
+int yywrap(){
+	return -1;
 }
 
 
@@ -251,7 +248,7 @@ void count()
 
 
 void yyerror(char *s) {
-	cout << "ERROR " << s << "\n";
+	printf("\nline-%d col-%d error-%s\n", line_num, column_num, s);
 }
 
 int error_handler(){
