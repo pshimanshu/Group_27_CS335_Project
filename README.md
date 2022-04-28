@@ -14,5 +14,7 @@ $ ./bin/lexer ./test/test2.cpp
 ```
 $ make parser
 # at this point we already have our y.out file, which is put into the the build directory
-# ./bin/parser ./tests/ptest2.c -o ptest2.dot
+# ./bin/parser ./test/ptest2.c -o ptest2.dot
+
+$ dot -Tpdf ptest2.dot -o ptest2.pdf
 ```
