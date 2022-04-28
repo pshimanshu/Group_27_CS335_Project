@@ -13,8 +13,7 @@ $ ./bin/lexer ./test/test2.cpp
 
 ```
 $ make parser
-# at this point we already have our y.out file, which is put into the the build directory
-# ./bin/parser ./test/ptest2.c -o ptest2.dot
+# we have the Automaton graph in the 'bin' folder
+$ ./bin/parser ./test/ptest2.c
 
-$ dot -Tpdf ptest2.dot -o ptest2.pdf
 ```
